@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1B72012C-C26A-4667-93CC-05C36304E54E}</ProjectGuid>
+    <ProjectGuid>{B98F4AF5-8F2C-487E-BE4C-83E5AFBBEDB7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>LR.Web.Tests</RootNamespace>
@@ -104,6 +104,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LR.Web\LR.Web.csproj">
+      <Project>{805A33C7-9C3D-40BD-BCEA-1DCF5689768E}</Project>
+      <Name>LR.Web</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
