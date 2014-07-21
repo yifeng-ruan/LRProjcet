@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Conversion\Mapping.cs" />
     <Compile Include="Implementation\DemoServices.cs" />
+    <Compile Include="Implementation\UserService.cs" />
     <Compile Include="Interface\IDemoServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Messages.Designer.cs">
