@@ -110,6 +110,7 @@ namespace LR.Web.Controllers
         #region 视图
         public ActionResult Index()
         {
+            string a = "123";
             return View();
         }
 
