@@ -15,9 +15,6 @@ namespace LR.Web.Controllers
 
         public ActionResult Index()
         {
-            var loginer = FormsAuth.GetUserData<LoginerBase>();
-            ViewBag.Title = "管理平台";
-            ViewBag.UserName = loginer.UserName;
             return View();
         }
 
