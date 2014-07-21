@@ -17,7 +17,7 @@ namespace LR.Web.Controllers
         private readonly IDemoServices _demoServices;
 
         #endregion 全局变量
-
+         
         #region 构造器
 
         public DemoController(IDemoServices demoServices)
