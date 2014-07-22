@@ -15,6 +15,7 @@ namespace LR.Web.Controllers
 
         public ActionResult Index()
         {
+            string test = "";
             return View();
         }
 
