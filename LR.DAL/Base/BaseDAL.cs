@@ -24,7 +24,7 @@ namespace LR.DAL.Base
         {
             if (string.IsNullOrEmpty(DBName))
             {
-                this.db = DatabaseFactory.CreateDatabase();
+                this.db = DatabaseFactory.CreateDatabase("Common");
             }
             else
             {

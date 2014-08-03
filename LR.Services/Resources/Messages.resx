@@ -120,7 +120,19 @@
   <data name="warning_CannotAddDemoWithNullInformatio" xml:space="preserve">
     <value>Cannot add a new demo with a null profile dto</value>
   </data>
+  <data name="warning_CannotAddUserWithNullInformation" xml:space="preserve">
+    <value />
+  </data>
+  <data name="warning_CannotLogin" xml:space="preserve">
+    <value>用户对象为NULL，无法正常登录</value>
+  </data>
   <data name="warning_InvalidArgumentForFindDemo" xml:space="preserve">
     <value>无效的参数去查找demo对象</value>
+  </data>
+  <data name="warning_UserPassNotCorrect" xml:space="preserve">
+    <value>用户名或密码不正确！</value>
+  </data>
+  <data name="warning_UserPassNotNULL" xml:space="preserve">
+    <value>用户名和密码不能为空</value>
   </data>
 </root>

@@ -14,7 +14,7 @@ using System.Web.Security;
 using Newtonsoft.Json;
 using LR.Core.Base;
 
-namespace LR.Core
+namespace LR.Core.Core
 { 
     public static class FormsAuth
     {

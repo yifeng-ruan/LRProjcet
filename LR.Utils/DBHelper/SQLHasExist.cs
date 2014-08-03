@@ -68,5 +68,29 @@ namespace LR.Utils.DBHelper
                 return "";//Error
             }
         }
+
+        /// <summary>
+        /// 检查是否惟一SQL语句
+        /// </summary>
+        /// <param name="table"></param>
+        /// <param name="cols"></param>
+        /// <param name="where1"></param>
+        /// <param name="where2"></param>
+        /// <param name="type">区别标识</param>
+        /// <returns></returns>
+        public static string hasExistMutilSqlText(string table, string cols, string[] wheres, string type)
+        {
+            string sql3 = @"
+                        SELECT COUNT({0}) as RecordCount FROM {1} where 1=1 ";
+            foreach (var item in wheres)
+            {
+                sql3 += " "+ type + " " + item.Trim().TrimStart('[').TrimEnd(']') + " = @" + item.Trim().TrimStart('[').TrimEnd(']');
+            }
+            if (string.IsNullOrEmpty(type))
+            {
+                return "";
+            }
+            return string.Format(sql3, cols, table);
+        }
     }
 }

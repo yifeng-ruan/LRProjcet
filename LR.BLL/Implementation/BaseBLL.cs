@@ -14,6 +14,8 @@ using LR.BLL.Interface;
 using LR.Utils;
 using System.Data;
 using LR.DAL.Interface;
+using LR.DAL.UserDAL;
+using LR.DAL.DemoDAL;
 
 ///继承实现接口方法
 namespace LR.BLL.Implementation

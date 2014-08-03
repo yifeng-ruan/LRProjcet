@@ -20,6 +20,10 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,7 +43,31 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.LoggingFacility.3.3.0\lib\net45\Castle.Facilities.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Services.Logging.Log4netIntegration, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Core-log4net1211.3.2.0.1\lib\net45\Castle.Services.Logging.Log4netIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -69,9 +97,6 @@
     <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
     </Reference>
@@ -128,81 +153,34 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Demo\Controllers\DemoController.cs" />
     <Compile Include="Areas\Demo\DemoAreaRegistration.cs" />
+    <Compile Include="Areas\MS\MSAreaRegistration.cs" />
     <Compile Include="Areas\Sys\SysAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Dependency\DependencyConventions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dependency\WindsorControllerFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Log\ExceptionFillters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Antlr3.Runtime.dll" />
-    <Content Include="bin\EntityFramework.dll" />
-    <Content Include="bin\EntityFramework.xml" />
-    <Content Include="bin\LR.BLL.dll" />
-    <Content Include="bin\LR.BLL.pdb" />
-    <Content Include="bin\LR.Core.dll" />
-    <Content Include="bin\LR.Core.pdb" />
-    <Content Include="bin\LR.DAL.dll" />
-    <Content Include="bin\LR.DAL.pdb" />
-    <Content Include="bin\LR.DTO.dll" />
-    <Content Include="bin\LR.DTO.pdb" />
-    <Content Include="bin\LR.Repository.dll" />
-    <Content Include="bin\LR.Repository.pdb" />
-    <Content Include="bin\LR.Services.dll" />
-    <Content Include="bin\LR.Services.pdb" />
-    <Content Include="bin\LR.Utils.dll" />
-    <Content Include="bin\LR.Utils.pdb" />
-    <Content Include="bin\LR.Web.dll" />
-    <Content Include="bin\LR.Web.pdb" />
-    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Caching.dll" />
-    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
-    <Content Include="bin\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
-    <Content Include="bin\Microsoft.Practices.ServiceLocation.dll" />
-    <Content Include="bin\Microsoft.Practices.Unity.dll" />
-    <Content Include="bin\Microsoft.Practices.Unity.Interception.dll" />
-    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
-    <Content Include="bin\Microsoft.Web.Mvc.FixedDisplayModes.dll" />
-    <Content Include="bin\Newtonsoft.Json.dll" />
-    <Content Include="bin\Newtonsoft.Json.xml" />
-    <Content Include="bin\System.Net.Http.Formatting.dll" />
-    <Content Include="bin\System.Net.Http.Formatting.xml" />
-    <Content Include="bin\System.Web.Http.dll" />
-    <Content Include="bin\System.Web.Http.WebHost.dll" />
-    <Content Include="bin\System.Web.Http.WebHost.xml" />
-    <Content Include="bin\System.Web.Http.xml" />
-    <Content Include="bin\System.Web.Mvc.dll" />
-    <Content Include="bin\System.Web.Mvc.xml" />
-    <Content Include="bin\System.Web.Optimization.dll" />
-    <Content Include="bin\System.Web.Providers.dll" />
-    <Content Include="bin\System.Web.Razor.dll" />
-    <Content Include="bin\System.Web.Razor.xml" />
-    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
-    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
-    <Content Include="bin\System.Web.WebPages.dll" />
-    <Content Include="bin\System.Web.WebPages.Razor.dll" />
-    <Content Include="bin\System.Web.WebPages.Razor.xml" />
-    <Content Include="bin\System.Web.WebPages.xml" />
-    <Content Include="bin\WebGrease.dll" />
-    <Content Include="bin\zh-Hans\EntityFramework.resources.dll" />
-    <Content Include="bin\zh-Hans\System.Net.Http.Formatting.resources.dll" />
-    <Content Include="bin\zh-Hans\System.Web.Http.resources.dll" />
-    <Content Include="bin\zh-Hans\System.Web.Http.WebHost.resources.dll" />
-    <Content Include="bin\zh-Hans\System.Web.Mvc.resources.dll" />
-    <Content Include="bin\zh-Hans\System.Web.Optimization.resources.dll" />
-    <Content Include="bin\zh-Hans\System.Web.Providers.resources.dll" />
-    <Content Include="bin\zh-Hans\System.Web.Razor.resources.dll" />
-    <Content Include="bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll" />
-    <Content Include="bin\zh-Hans\System.Web.WebPages.Razor.resources.dll" />
-    <Content Include="bin\zh-Hans\System.Web.WebPages.resources.dll" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\css\base.css" />
+    <Content Include="Content\css\Login\login.css" />
+    <Content Include="Content\css\Login\register.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -257,24 +235,20 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
     <Content Include="Areas\Sys\Views\Web.config" />
     <Content Include="Areas\Demo\Views\Web.config" />
-    <None Include="bin\LR.Web.dll.config" />
+    <Content Include="Areas\MS\Views\Web.config" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\common\common.js" />
+    <Content Include="Scripts\common\utils.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jQuery-plugin\jnotify\jquery.jnotify.css" />
+    <Content Include="Scripts\jQuery-plugin\jnotify\jquery.jnotify.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
@@ -286,6 +260,7 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\viewModel\login.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -300,11 +275,16 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Error.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Demo\Models\" />
     <Folder Include="Areas\Demo\Views\Shared\" />
+    <Folder Include="Areas\MS\Controllers\" />
+    <Folder Include="Areas\MS\Models\" />
+    <Folder Include="Areas\MS\Views\Shared\" />
     <Folder Include="Areas\Sys\Controllers\" />
     <Folder Include="Areas\Sys\Models\" />
     <Folder Include="Areas\Sys\Views\Shared\" />
@@ -314,6 +294,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LR.BLL\LR.BLL.csproj">
+      <Project>{1f0240ab-41f0-4082-9840-0dbc05eaf923}</Project>
+      <Name>LR.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LR.Core\LR.Core.csproj">
       <Project>{43f32a13-5945-42f6-bbd9-489b21c0a9f2}</Project>
       <Name>LR.Core</Name>
@@ -322,9 +306,17 @@
       <Project>{0d050950-44e7-4fab-9a8d-547535c2102b}</Project>
       <Name>LR.DTO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LR.Repository\LR.Repository.csproj">
+      <Project>{326e9b96-319d-49a4-990f-e5b847e3a268}</Project>
+      <Name>LR.Repository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LR.Services\LR.Services.csproj">
       <Project>{10d0edb9-53cd-4582-a091-6b00d3d8cef6}</Project>
       <Name>LR.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LR.Utils\LR.Utils.csproj">
+      <Project>{c000fbcc-768e-41fa-aea5-62ca0203d163}</Project>
+      <Name>LR.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -97,6 +97,14 @@ namespace LR.Repository
                 return null;
         }
 
+        public virtual bool HasExist(T item)
+        {
+            if (item != (T)null)
+                return _UnitOfWork.HasExist<T>(item);
+            else
+                return false;
+        }
+
         /// <summary>
         /// 
         /// </summary>

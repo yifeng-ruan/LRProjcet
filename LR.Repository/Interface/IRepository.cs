@@ -40,6 +40,12 @@ namespace LR.Repository
         T Get(T item);
 
         /// <summary>
+        /// 是否存在
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        bool HasExist(T item);
+        /// <summary>
         /// Get all elements of type T in repository
         /// </summary>
         /// <returns>List of selected elements</returns>

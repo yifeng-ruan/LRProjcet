@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using LR.Core;
-using LR.Core.Base;
 
 namespace LR.Web.Controllers
 {
@@ -15,7 +13,6 @@ namespace LR.Web.Controllers
 
         public ActionResult Index()
         {
-            string test = "";
             return View();
         }
 

@@ -315,6 +315,10 @@ namespace LR.DAL.Base
                 {
                     sqlText = SQLHasExist.hasExistSqlText(baseEnt._DBTable, selectCol, whereCol[0].Trim().TrimStart('[').TrimEnd(']'), "");
                 }
+                else if (whereCol.Length>2)
+                {
+                    sqlText = SQLHasExist.hasExistMutilSqlText(baseEnt._DBTable, selectCol, whereCol, baseEnt._Sql);
+                }
 
                 DbCommand dbCommand = db.GetSqlStringCommand(sqlText);
 

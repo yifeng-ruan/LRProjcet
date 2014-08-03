@@ -70,11 +70,47 @@ namespace LR.Services.Resources {
         }
         
         /// <summary>
+        ///   查找类似  的本地化字符串。
+        /// </summary>
+        internal static string warning_CannotAddUserWithNullInformation {
+            get {
+                return ResourceManager.GetString("warning_CannotAddUserWithNullInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 用户对象为NULL，无法正常登录 的本地化字符串。
+        /// </summary>
+        internal static string warning_CannotLogin {
+            get {
+                return ResourceManager.GetString("warning_CannotLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 无效的参数去查找demo对象 的本地化字符串。
         /// </summary>
         internal static string warning_InvalidArgumentForFindDemo {
             get {
                 return ResourceManager.GetString("warning_InvalidArgumentForFindDemo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 用户名或密码不正确！ 的本地化字符串。
+        /// </summary>
+        internal static string warning_UserPassNotCorrect {
+            get {
+                return ResourceManager.GetString("warning_UserPassNotCorrect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 用户名和密码不能为空 的本地化字符串。
+        /// </summary>
+        internal static string warning_UserPassNotNULL {
+            get {
+                return ResourceManager.GetString("warning_UserPassNotNULL", resourceCulture);
             }
         }
     }
